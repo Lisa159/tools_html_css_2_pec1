@@ -1,0 +1,96 @@
+.nav-bar {
+  width: 100%;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  margin-top: 20px;
+  z-index: 100;
+
+  &__hamburguer {
+    color: #fff;
+    font-size: 30px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    height: 100%;
+    width: 70px;
+
+    &:active {
+      background-color: #819c6b;
+    }
+
+    &:hover {
+      background-color: $main-color;
+    }
+  }
+
+  &__content {
+    div {
+      background-color: #273020;
+      display: flex;
+      padding: 20px;
+      gap: 40px;
+      a:first-child {
+        font-size: 50px;
+        line-height: 36px;
+        height: 42px;
+        align-self: flex-end;
+      }
+      a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 20px;
+        line-height: 30px;
+
+        &:hover {
+          background-color: $main-color;
+        }
+
+        &:active {
+          background-color: #c0eca0;
+          color: #273020;
+        }
+      }
+    }
+  }
+}
+
+.nav-bar--responsive {
+  background-color: #273020;
+}
+
+.nav-bar--unresponsive {
+  background-color: #fff;
+  display: none;
+  align-items: center;
+  justify-content: space-evenly;
+
+  a {
+    color: rgba(39, 48, 32, 1);
+    text-decoration: none;
+    text-transform: uppercase;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 10px 0 10px;
+    border-radius: 20px;
+
+    &:hover {
+      background-color: $main-color;
+    }
+
+    &:active {
+      background-color: #273020;
+      color: #fff;
+    }
+  }
+}
+
+@media (min-width: map-get($breakpoints, "small")) {
+  .nav-bar--responsive {
+    display: none;
+  }
+  .nav-bar--unresponsive {
+    display: flex;
+  }
+}

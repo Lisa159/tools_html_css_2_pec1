@@ -1,0 +1,153 @@
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header {
+  height: 370px;
+
+  &__drawing {
+    background-color: $main-color;
+
+    img {
+      width: calc(100% - 15px);
+      border-radius: 0 0 50%;
+      margin-bottom: 1.5%;
+      height: 300px;
+    }
+  }
+
+  &__name-container {
+    display: none;
+  }
+
+  &__photo {
+    left: 0;
+    top: 200px;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  &__profile-photo {
+    background-color: $main-color;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    z-index: 0;
+
+    img {
+      margin-left: -50px;
+    }
+  }
+
+  &__profile-background {
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    z-index: 0;
+    margin-top: 15px;
+
+    svg {
+      fill: $main-color;
+    }
+  }
+}
+
+@media (min-width: map-get($breakpoints, "small")) {
+  .header {
+    &__drawing {
+      background-color: rgba(0, 0, 0, 0);
+      background-image: linear-gradient(
+          rgba(255, 255, 255, 0.45),
+          rgba(255, 255, 255, 0.4)
+        ),
+        url(../images/kelpie.jpg);
+      background-position: 0 0, 0 0;
+      background-repeat: repeat, repeat;
+      background-size: cover;
+      background-attachment: scroll, scroll;
+      background-origin: padding-box, padding-box;
+      background-clip: border-box, border-box;
+      width: 100%;
+      height: 300px;
+      border-radius: 0;
+
+      picture {
+        display: none;
+      }
+    }
+
+    &__name-container {
+      display: flex !important;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      justify-content: flex-start;
+      gap: 20px;
+      padding-top: 20px;
+    }
+
+    &__name {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 64px;
+      text-align: center;
+      color: #fff;
+      font-family: $font-family-title;
+    }
+
+    &__profession {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 50px;
+      text-align: center;
+      color: #fff;
+    }
+  }
+}
+
+.name-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &__name {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    span {
+      font-size: 40px;
+    }
+    div {
+      width: 20px;
+      height: 25px;
+      background-color: $main-color;
+    }
+  }
+
+  &__profession {
+    background-color: $main-color;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    span {
+      font-size: 25px;
+      color: #fff;
+    }
+  }
+}
+
+@media (min-width: map-get($breakpoints, "small")) {
+  .name-container {
+    display: none;
+  }
+}

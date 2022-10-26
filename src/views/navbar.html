@@ -1,0 +1,32 @@
+<div id="nav-bar" class="nav-bar nav-bar--responsive">
+    <button
+        sidebarjs-toggle
+        class="nav-bar__hamburguer"
+        aria-label="Hamburguer sidenav"
+        tabindex="0"
+    >
+        &#9776;
+    </button>
+    <div class="nav-bar__content" sidebarjs>
+        <a
+            href="javascript:void(0)"
+            class="nav-bar__close"
+            onclick="handleNavBar()"
+            >&times;</a
+        >
+        <a href="#sobre-mi" onclick="handleNavBar()">Sobre mi</a>
+        <a href="#timeline" onclick="handleNavBar()">Timeline</a>
+        <a href="#habilidades" onclick="handleNavBar()">Habilidades</a>
+        <a href="#portfolio" onclick="handleNavBar()">Portfolio</a>
+        <a href="#contacto" onclick="handleNavBar()">Contacto</a>
+    </div>
+    <div class="nav-bar__overlay"></div>
+</div>
+
+<div class="nav-bar nav-bar--unresponsive">
+    <a href="#sobre-mi">Sobre mi</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#habilidades">Habilidades</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contacto">Contacto</a>
+</div>

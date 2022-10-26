@@ -1,27 +1,323 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss"><!-- do not remove this line! -->
-    <title>UOC Boilerplate</title>
-  </head>
-  <body>
-    <div class="uoc-container">
-      <picture>
-        <source srcset="./assets/images/logo.png?as=webp&width=350" type="image/webp" />
-        <img src="./assets/images/logo.png?width=350" alt="Universitat Oberta de Catalunya" class="uoc-logo" />
-      </picture>
-      <h1 class="uoc-title">Hello, UOC!</h1>
-      <p>
-        This is a starter template for the Advanced HTML and CSS Tools courses
-        from the Master's Program in Multimedia Applications and the Master's
-        Program in Web App and Website Development at the Universitat Oberta de
-        Catalunya.
-      </p>
-    </div>
-    <include src="./views/footer.html"></include>
-    <script type="module" src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
-  </body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="./assets/styles/main.scss"
+        />
+        <!-- do not remove this line! -->
+        <title>Curriculum</title>
+        <link
+            rel="stylesheet"
+            href="../node_modules/sidebar-js/dist/sidebarjs.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../node_modules/@fortawesome/fontawesome-free/css/all.css"
+        />
+    </head>
+    <body>
+        <include src="./views/header.html"></include>
+        <main>
+            <button
+                class="arrow"
+                aria-label="Scroll"
+                onclick="scrollToSidenav()"
+            >
+                &#8681;
+            </button>
+            <include src="./views/navbar.html"></include>
+            <article class="section section--even">
+                <div id="sobre-mi" class="section__title">
+                    <h1>SOBRE MI</h1>
+                </div>
+                <div class="section__content">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat. Duis aute irure dolor in
+                        reprehenderit in voluptate velit esse cillum dolore eu
+                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit
+                        anim id est laborum.
+                    </p>
+                </div>
+            </article>
+            <article class="section section--odd">
+                <div id="timeline" class="section__title">
+                    <h1>TIMELINE</h1>
+                </div>
+                <div class="timeline__content timeline__content--even">
+                    <div class="timeline__time">
+                        <div class="timeline__time-title">
+                            <span>2021 - presente</span>
+                        </div>
+                        <div
+                            class="timeline__time-dot1 timeline__time-dot"
+                        ></div>
+                        <div
+                            class="timeline__time-dot2 timeline__time-dot"
+                        ></div>
+                        <div
+                            class="timeline__time-dot3 timeline__time-dot"
+                        ></div>
+                        <div class="timeline__time-content">
+                            <span>Freelance</span>
+                            <span><i>Madrid, España</i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline__content timeline__content--odd">
+                    <div class="timeline__time">
+                        <div class="timeline__time-title">
+                            <span>2018 - 2021</span>
+                        </div>
+                        <div
+                            class="timeline__time-dot1 timeline__time-dot"
+                        ></div>
+                        <div
+                            class="timeline__time-dot2 timeline__time-dot"
+                        ></div>
+                        <div
+                            class="timeline__time-dot3 timeline__time-dot"
+                        ></div>
+                        <div class="timeline__time-content">
+                            <span>Ilustradora</span>
+                            <span>Lorem Ipsum</span>
+                            <span><i>Madrid, España</i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline__content timeline__content--even">
+                    <div class="timeline__time">
+                        <div class="timeline__time-title">
+                            <span>2016 - 2018</span>
+                        </div>
+                        <div
+                            class="timeline__time-dot1 timeline__time-dot"
+                        ></div>
+                        <div
+                            class="timeline__time-dot2 timeline__time-dot"
+                        ></div>
+                        <div
+                            class="timeline__time-dot3 timeline__time-dot"
+                        ></div>
+                        <div class="timeline__time-content">
+                            <span>Máster en ilustración</span>
+                            <span>Univerdiad de Salamanca</span>
+                            <span><i>Salamanca, España</i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline__content timeline__content--odd">
+                    <div class="timeline__time">
+                        <div class="timeline__time-title">
+                            <span>2012 - 2016</span>
+                        </div>
+                        <div class="timeline__time-content">
+                            <span>Bellas artes</span>
+                            <span>Univerdiad de Salamanca</span>
+                            <span><i>Salamanca, España</i></span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="section section--even">
+                <div id="habilidades" class="section__title">
+                    <a href="#habilidades"></a>
+                    <h1>HABILIDADES</h1>
+                </div>
+                <div class="skills__content">
+                    <div class="skills__tools">
+                        <h2>Herramientas</h2>
+                        <div class="skills__tool-container">
+                            <span class="skills__icon">
+                                <include
+                                    src="./assets/images/photoshop_icon.svg"
+                                ></include>
+                            </span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <div class="skills__tool-container">
+                            <span class="skills__icon">
+                                <include
+                                    src="./assets/images/ai_icon.svg"
+                                ></include>
+                            </span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa-regular fa-star"></span>
+                        </div>
+                        <div class="skills__tool-container">
+                            <span class="skills__icon">
+                                <include
+                                    src="./assets/images/id_icon.svg"
+                                ></include>
+                            </span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa-regular fa-star"></span>
+                            <span class="fa-regular fa-star"></span>
+                        </div>
+                    </div>
+                    <div class="skills__languages">
+                        <h2>Idiomas</h2>
+                        <div class="skills__language-container">
+                            <h3>Español</h3>
+                            <div class="skills__slider">
+                                <span>0</span>
+                                <div class="skills__slider-track">
+                                    <div class="skills__slider-back"></div>
+                                    <div class="skills__slider-fill"></div>
+                                </div>
+                                <span>100</span>
+                            </div>
+                        </div>
+                        <div class="skills__language-container">
+                            <h3>Inglés</h3>
+                            <div class="skills__slider">
+                                <span>0</span>
+                                <div class="skills__slider-track">
+                                    <div class="skills__slider-back"></div>
+                                    <div
+                                        class="skills__slider-fill skills__slider-fill-2"
+                                    ></div>
+                                </div>
+                                <span>100</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="section section--odd">
+                <div id="portfolio" class="section__title">
+                    <a href="#portfolio"></a>
+                    <h1>PORTFOLIO</h1>
+                </div>
+                <div class="portfolio__content"></div>
+
+                <div class="grid-gallery">
+                    <a class="grid-gallery__item" href="#">
+                        <img
+                            class="grid-gallery__image"
+                            srcset="
+                                ./assets/images/kelpie.jpg?as=webp&width=250 250w,
+                                ./assets/images/kelpie.jpg?as=webp&width=300 300w
+                            "
+                            sizes="(max-width: 600px) 250px, 300px"
+                            src="./assets/images/kelpie.jpg?as=webp&width=300.jpg"
+                            alt="Dibujo de caballo"
+                        />
+                    </a>
+
+                    <a class="grid-gallery__item" href="#">
+                        <img
+                            class="grid-gallery__image"
+                            srcset="
+                                ./assets/images/lancelot.jpg?as=webp&width=250 250w,
+                                ./assets/images/lancelot.jpg?as=webp&width=300 300w
+                            "
+                            sizes="(max-width: 600px) 250px, 300px"
+                            src="./assets/images/lancelot.jpg?as=webp&width=300.jpg"
+                            alt="Dibujo de caballo"
+                        />
+                    </a>
+
+                    <a class="grid-gallery__item" href="#">
+                        <img
+                            class="grid-gallery__image"
+                            srcset="
+                                ./assets/images/ryser.jpg?as=webp&width=250 250w,
+                                ./assets/images/ryser.jpg?as=webp&width=300 300w
+                            "
+                            sizes="(max-width: 600px) 250px, 300px"
+                            src="./assets/images/ryser.jpg?as=webp&width=300.jpg"
+                            alt="Dibujo de caballo"
+                        />
+                    </a>
+                    <a class="grid-gallery__item" href="#">
+                        <img
+                            class="grid-gallery__image"
+                            srcset="
+                                ./assets/images/tigre.jpg?as=webp&width=250 250w,
+                                ./assets/images/tigre.jpg?as=webp&width=300 300w
+                            "
+                            sizes="(max-width: 600px) 250px, 300px"
+                            src="./assets/images/tigre.jpg?as=webp&width=300.jpg"
+                            alt="Dibujo de tigure"
+                        />
+                    </a>
+                </div>
+            </article>
+            <article class="section section--even">
+                <div id="contacto" class="section__title">
+                    <a href="#contacto"></a>
+                    <h1>CONTACTO</h1>
+                </div>
+                <div class="contacto__content">
+                    <div class="contacto__info">
+                        <span>TELÉFONO: +34 111 22 33 44</span>
+                        <span>EMAIL: art_example@gmail.com</span>
+                    </div>
+                    <div>
+                        <form>
+                            <div class="contacto__name">
+                                <input
+                                    type="text"
+                                    id="fname"
+                                    name="fname"
+                                    placeholder="Tu nombre"
+                                    minlength="2"
+                                    maxlength="64"
+                                    pattern="[a-zA-Z\-\']+"
+                                    required
+                                />
+                                <input
+                                    type="text"
+                                    id="fsurname"
+                                    name="fsurname"
+                                    placeholder="Tu apellido"
+                                    minlength="2"
+                                    maxlength="64"
+                                    pattern="[a-zA-Z\-\']+"
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <textarea
+                                    name="textarea"
+                                    rows="10"
+                                    cols="50"
+                                    placeholder="Introduce tu mensaje:"
+                                ></textarea>
+                            </div>
+                            <input
+                                class="contacto__btn"
+                                type="submit"
+                                value="ENVIAR"
+                            />
+                        </form>
+                    </div>
+                </div>
+            </article>
+        </main>
+        <include src="./views/footer.html"></include>
+        <script src="../node_modules/sidebar-js/dist/sidebarjs.js"></script>
+        <script type="module" src="./assets/scripts/sidenav.js"></script>
+        <script async src="./assets/scripts/main.js"></script>
+        <!-- do not remove this line! -->
+    </body>
 </html>

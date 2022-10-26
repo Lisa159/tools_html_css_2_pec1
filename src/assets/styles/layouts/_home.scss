@@ -1,57 +1,322 @@
-* {
+@import "header";
+@import "navbar";
+@import "footer";
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
+  font-family: $font-family-serif;
 }
 
 body {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   margin: 0;
-  padding: 2rem;
-  font-family: $font-family-sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  background-color: $uoc-bg;
-  color: $uoc-corporate;
+  min-height: 100%;
+  overflow-x: hidden;
 }
 
-.uoc-container {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  border-radius: 2rem;
-  text-align: center;
-  background-color: #fff;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
-.uoc-logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5rem;
-  max-width: 200px;
-  height: auto;
+  .arrow {
+    font-size: 100px;
+    color: $main-color;
+    align-self: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
 
-  @media (min-width: $mqMinWidth) {
-    max-width: none;
+    &:active {
+      color: #273020;
+    }
+
+    &:hover {
+      color: #819c6b;
+    }
+
+    @media (min-width: map-get($breakpoints, "small")) {
+      display: none;
+    }
   }
-}
 
-.uoc-title {
-  font-family: $font-family-serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: $uoc-corporate;
+  .section {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 
-  @media (min-width: $mqMinWidth) {
-    font-size: 36px;
+    &__title {
+      display: inline-flex;
+      scroll-margin-top: 80px;
+      h1 {
+        font-family: $font-family-title;
+      }
+    }
   }
-}
 
-.uoc-footer {
-  margin-top: 1.5rem;
-  font-size: 0.75rem;
-  text-align: center;
+  .section--even {
+    background-color: $main-color-background;
+    width: 100%;
+  }
+
+  .timeline {
+    &__content {
+      width: 100%;
+      p {
+        text-align: center;
+      }
+    }
+
+    &__time {
+      height: 200px;
+      display: grid;
+      grid-auto-flow: row;
+      grid-row-gap: 16px;
+      grid-template-columns: 0.3fr 1.3fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-template-areas:
+        "title title"
+        "dot1 time-content"
+        "dot2 time-content"
+        "dot3 time-content";
+    }
+
+    &__time-title {
+      grid-area: title;
+      background-color: $main-color;
+      color: #fff;
+      width: fit-content;
+      border-radius: 20px;
+      font-size: 30px;
+      display: flex;
+      span {
+        padding: 0 10px;
+      }
+    }
+
+    &__time-dot {
+      height: 25px;
+      width: 25px;
+      background-color: $main-color;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    &__time-dot1 {
+      grid-area: dot1;
+    }
+
+    &__time-dot2 {
+      grid-area: dot2;
+    }
+
+    &__time-dot3 {
+      grid-area: dot3;
+    }
+
+    &__time-content {
+      display: flex;
+      flex-direction: column;
+      grid-area: time-content;
+      font-size: 20px;
+      gap: 10px;
+      span:first-child {
+        font-weight: 600;
+      }
+    }
+
+    @media (min-width: map-get($breakpoints, "small")) {
+      &__content--even {
+        grid-auto-flow: dense;
+        direction: rtl;
+        padding-right: 50%;
+      }
+      &__content--odd {
+        padding-left: calc(50% - 25px);
+      }
+    }
+  }
+
+  .skills {
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      width: 100%;
+      gap: 20px;
+    }
+
+    &__tools {
+      gap: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__tool-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      gap: 10px;
+      .fa-star {
+        font-size: 30px;
+        color: $main-color;
+      }
+      .fa-star:before {
+        font-family: "Font Awesome 6 Free";
+      }
+    }
+
+    &__icon svg {
+      width: 45px;
+    }
+
+    &__slider {
+      display: flex;
+      height: 35px;
+      align-items: center;
+      gap: 20px;
+    }
+
+    &__slider-track {
+      width: 250px;
+      height: 100%;
+      position: relative;
+    }
+
+    &__slider-fill,
+    &__slider-back {
+      height: 100%;
+      border-radius: 15px;
+      position: absolute;
+    }
+
+    &__slider-back {
+      width: 100%;
+      background-color: #d9d9d9;
+    }
+
+    &__slider-fill {
+      background-color: $main-color;
+      transition: 2s ease-in-out;
+      width: 0;
+    }
+
+    @media (min-width: map-get($breakpoints, "small")) {
+      &__content {
+        flex-direction: row;
+      }
+    }
+  }
+
+  .portfolio {
+    &__content {
+      text-align: center;
+    }
+  }
+
+  .grid-gallery {
+    display: grid;
+    grid-auto-rows: 300px;
+    gap: 1rem;
+
+    @media all and (min-width: map-get($breakpoints, "small")) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    @media all and (min-width: map-get($breakpoints, "medium")) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media all and (min-width: map-get($breakpoints, "large")) {
+      grid-template-columns: repeat(6, 1fr);
+    }
+    &__item {
+      &:nth-child(11n + 1) {
+        grid-column: span 1;
+      }
+      &:nth-child(11n + 4) {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+      &:nth-child(11n + 6) {
+        grid-column: span 3;
+        grid-row: span 1;
+      }
+      &:nth-child(11n + 7) {
+        grid-column: span 1;
+        grid-row: span 2;
+      }
+      &:nth-child(11n + 8) {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+      &:nth-child(11n + 9) {
+        grid-row: span 3;
+      }
+    }
+    &__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .contacto {
+    &__content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        input,
+        textarea {
+          font-size: 15px;
+          width: 100%;
+        }
+      }
+    }
+    &__info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
+    &__name {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+    &__btn {
+      max-width: fit-content;
+      align-self: center;
+      font-size: 20px;
+      background-color: #273020;
+      color: #fff;
+      padding: 10px;
+      border-radius: 20px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #9dc183;
+      }
+
+      &:active {
+        background-color: #c0eca0;
+        color: #273020;
+      }
+    }
+  }
 }

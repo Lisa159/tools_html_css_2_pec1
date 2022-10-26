@@ -1,12 +1,14 @@
 @use "sass:color";
+@import url(https://fonts.googleapis.com/css?family=Righteous);
 
-$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-  "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-  "Segoe UI Symbol";
 $font-family-serif: "Georgia", "Times New Roman", serif;
+$font-family-title: "Righteous";
 
-$uoc-corporate: #000078;
-$uoc-masterbrand: #73edff;
-$uoc-bg: color.scale($uoc-masterbrand, $lightness: 70%);
+$breakpoints: (
+  "small": 480px,
+  "medium": 768px,
+  "large": 1024px,
+) !default;
 
-$mqMinWidth: 420px;
+$main-color: #9dc183;
+$main-color-background: rgba(157, 193, 131, 0.19);
