@@ -222,23 +222,22 @@ main {
     &__content {
       text-align: center;
     }
-  }
+    &__gallery {
+      display: grid;
+      grid-auto-rows: 300px;
+      gap: 1rem;
 
-  .grid-gallery {
-    display: grid;
-    grid-auto-rows: 300px;
-    gap: 1rem;
+      @media all and (min-width: map-get($breakpoints, "small")) {
+        grid-template-columns: repeat(1, 1fr);
+      }
 
-    @media all and (min-width: map-get($breakpoints, "small")) {
-      grid-template-columns: repeat(1, 1fr);
-    }
+      @media all and (min-width: map-get($breakpoints, "medium")) {
+        grid-template-columns: repeat(3, 1fr);
+      }
 
-    @media all and (min-width: map-get($breakpoints, "medium")) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    @media all and (min-width: map-get($breakpoints, "large")) {
-      grid-template-columns: repeat(6, 1fr);
+      @media all and (min-width: map-get($breakpoints, "large")) {
+        grid-template-columns: repeat(6, 1fr);
+      }
     }
     &__item {
       &:nth-child(11n + 1) {

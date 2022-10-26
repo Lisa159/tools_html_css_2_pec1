@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="es">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <link
             rel="stylesheet"
             type="text/css"
             href="./assets/styles/main.scss"
         />
         <!-- do not remove this line! -->
-        <title>Curriculum</title>
         <link
             rel="stylesheet"
             href="../node_modules/sidebar-js/dist/sidebarjs.css"
@@ -19,6 +19,7 @@
             rel="stylesheet"
             href="../node_modules/@fortawesome/fontawesome-free/css/all.css"
         />
+        <title>Curriculum</title>
     </head>
     <body>
         <include src="./views/header.html"></include>
@@ -32,7 +33,7 @@
             </button>
             <include src="./views/navbar.html"></include>
             <article class="section section--even">
-                <div id="sobre-mi" class="section__title">
+                <div class="section__title" id="sobre-mi">
                     <h1>SOBRE MI</h1>
                 </div>
                 <div class="section__content">
@@ -50,7 +51,7 @@
                 </div>
             </article>
             <article class="section section--odd">
-                <div id="timeline" class="section__title">
+                <div class="section__title" id="timeline">
                     <h1>TIMELINE</h1>
                 </div>
                 <div class="timeline__content timeline__content--even">
@@ -129,7 +130,7 @@
                 </div>
             </article>
             <article class="section section--even">
-                <div id="habilidades" class="section__title">
+                <div class="section__title" id="habilidades">
                     <a href="#habilidades"></a>
                     <h1>HABILIDADES</h1>
                 </div>
@@ -203,67 +204,65 @@
                 </div>
             </article>
             <article class="section section--odd">
-                <div id="portfolio" class="section__title">
+                <div class="section__title" id="portfolio">
                     <a href="#portfolio"></a>
                     <h1>PORTFOLIO</h1>
                 </div>
-                <div class="portfolio__content"></div>
-
-                <div class="grid-gallery">
-                    <a class="grid-gallery__item" href="#">
-                        <img
-                            class="grid-gallery__image"
-                            srcset="
-                                ./assets/images/kelpie.jpg?as=webp&width=250 250w,
-                                ./assets/images/kelpie.jpg?as=webp&width=300 300w
-                            "
-                            sizes="(max-width: 600px) 250px, 300px"
-                            src="./assets/images/kelpie.jpg?as=webp&width=300.jpg"
-                            alt="Dibujo de caballo"
-                        />
-                    </a>
-
-                    <a class="grid-gallery__item" href="#">
-                        <img
-                            class="grid-gallery__image"
-                            srcset="
-                                ./assets/images/lancelot.jpg?as=webp&width=250 250w,
-                                ./assets/images/lancelot.jpg?as=webp&width=300 300w
-                            "
-                            sizes="(max-width: 600px) 250px, 300px"
-                            src="./assets/images/lancelot.jpg?as=webp&width=300.jpg"
-                            alt="Dibujo de caballo"
-                        />
-                    </a>
-
-                    <a class="grid-gallery__item" href="#">
-                        <img
-                            class="grid-gallery__image"
-                            srcset="
-                                ./assets/images/ryser.jpg?as=webp&width=250 250w,
-                                ./assets/images/ryser.jpg?as=webp&width=300 300w
-                            "
-                            sizes="(max-width: 600px) 250px, 300px"
-                            src="./assets/images/ryser.jpg?as=webp&width=300.jpg"
-                            alt="Dibujo de caballo"
-                        />
-                    </a>
-                    <a class="grid-gallery__item" href="#">
-                        <img
-                            class="grid-gallery__image"
-                            srcset="
-                                ./assets/images/tigre.jpg?as=webp&width=250 250w,
-                                ./assets/images/tigre.jpg?as=webp&width=300 300w
-                            "
-                            sizes="(max-width: 600px) 250px, 300px"
-                            src="./assets/images/tigre.jpg?as=webp&width=300.jpg"
-                            alt="Dibujo de tigure"
-                        />
-                    </a>
+                <div class="portfolio__content">
+                    <div class="portfolio__gallery">
+                        <div class="portfolio__item">
+                            <img
+                                class="portfolio__image"
+                                src="./assets/images/kelpie.jpg?as=webp&width=300.jpg"
+                                srcset="
+                                    ./assets/images/kelpie.jpg?as=webp&width=250 250w,
+                                    ./assets/images/kelpie.jpg?as=webp&width=300 300w
+                                "
+                                alt="Dibujo de caballo"
+                                sizes="(max-width: 600px) 250px, 300px"
+                            />
+                        </div>
+                        <div class="portfolio__item">
+                            <img
+                                class="portfolio__image"
+                                src="./assets/images/lancelot.jpg?as=webp&width=300.jpg"
+                                srcset="
+                                    ./assets/images/lancelot.jpg?as=webp&width=250 250w,
+                                    ./assets/images/lancelot.jpg?as=webp&width=300 300w
+                                "
+                                alt="Dibujo de caballo"
+                                sizes="(max-width: 600px) 250px, 300px"
+                            />
+                        </div>
+                        <div class="portfolio__item">
+                            <img
+                                class="portfolio__image"
+                                src="./assets/images/ryser.jpg?as=webp&width=300.jpg"
+                                srcset="
+                                    ./assets/images/ryser.jpg?as=webp&width=250 250w,
+                                    ./assets/images/ryser.jpg?as=webp&width=300 300w
+                                "
+                                alt="Dibujo de caballo"
+                                sizes="(max-width: 600px) 250px, 300px"
+                            />
+                        </div>
+                        <div class="portfolio__item">
+                            <img
+                                class="portfolio__image"
+                                src="./assets/images/tigre.jpg?as=webp&width=300.jpg"
+                                srcset="
+                                    ./assets/images/tigre.jpg?as=webp&width=250 250w,
+                                    ./assets/images/tigre.jpg?as=webp&width=300 300w
+                                "
+                                alt="Dibujo de tigre"
+                                sizes="(max-width: 600px) 250px, 300px"
+                            />
+                        </div>
+                    </div>
                 </div>
             </article>
             <article class="section section--even">
-                <div id="contacto" class="section__title">
+                <div class="section__title" id="contacto">
                     <a href="#contacto"></a>
                     <h1>CONTACTO</h1>
                 </div>
@@ -276,9 +275,9 @@
                         <form>
                             <div class="contacto__name">
                                 <input
-                                    type="text"
                                     id="fname"
                                     name="fname"
+                                    type="text"
                                     placeholder="Tu nombre"
                                     minlength="2"
                                     maxlength="64"
@@ -286,9 +285,9 @@
                                     required
                                 />
                                 <input
-                                    type="text"
                                     id="fsurname"
                                     name="fsurname"
+                                    type="text"
                                     placeholder="Tu apellido"
                                     minlength="2"
                                     maxlength="64"
