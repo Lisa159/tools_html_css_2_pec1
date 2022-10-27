@@ -1,26 +1,51 @@
 <div class="nav-bar nav-bar--responsive" id="nav-bar">
     <button
-        class="nav-bar__hamburguer"
+        class="nav-bar--responsive__hamburguer"
         aria-label="Hamburguer sidenav"
         tabindex="0"
         sidebarjs-toggle
     >
         &#9776;
     </button>
-    <div class="nav-bar__content" sidebarjs>
+    <div class="nav-bar--responsive__content" sidebarjs>
         <a
-            class="nav-bar__close"
+            class="nav-bar--responsive__link"
             href="javascript:void(0)"
             onclick="handleNavBar()"
             >&times;</a
         >
-        <a href="#sobre-mi" onclick="handleNavBar()">Sobre mi</a>
-        <a href="#timeline" onclick="handleNavBar()">Timeline</a>
-        <a href="#habilidades" onclick="handleNavBar()">Habilidades</a>
-        <a href="#portfolio" onclick="handleNavBar()">Portfolio</a>
-        <a href="#contacto" onclick="handleNavBar()">Contacto</a>
+        <a
+            class="nav-bar--responsive__link"
+            href="#sobre-mi"
+            onclick="handleNavBar()"
+            >Sobre mi</a
+        >
+        <a
+            class="nav-bar--responsive__link"
+            href="#timeline"
+            onclick="handleNavBar()"
+            >Timeline</a
+        >
+        <a
+            class="nav-bar--responsive__link"
+            href="#habilidades"
+            onclick="handleNavBar()"
+            >Habilidades</a
+        >
+        <a
+            class="nav-bar--responsive__link"
+            href="#portfolio"
+            onclick="handleNavBar()"
+            >Portfolio</a
+        >
+        <a
+            class="nav-bar--responsive__link"
+            href="#contacto"
+            onclick="handleNavBar()"
+            >Contacto</a
+        >
     </div>
-    <div class="nav-bar__overlay"></div>
+    <div class="nav-bar--responsive__overlay"></div>
 </div>
 
 <div class="nav-bar nav-bar--unresponsive">

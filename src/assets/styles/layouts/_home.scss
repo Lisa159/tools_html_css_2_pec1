@@ -14,8 +14,8 @@
 body {
   display: flex;
   flex-direction: column;
-  margin: 0;
   min-height: 100%;
+  margin: 0;
   overflow-x: hidden;
 }
 
@@ -25,14 +25,14 @@ main {
   gap: 20px;
 
   .arrow {
-    font-size: 100px;
-    color: $main-color;
     align-self: center;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
     width: 100%;
     margin-top: 20px;
+    font-size: 100px;
+    color: $main-color;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
 
     &:active {
       color: #273020;
@@ -48,12 +48,12 @@ main {
   }
 
   .section {
-    padding: 20px;
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    align-items: center;
     gap: 10px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 
     &__title {
       display: inline-flex;
@@ -65,8 +65,8 @@ main {
   }
 
   .section--even {
-    background-color: $main-color-background;
     width: 100%;
+    background-color: $main-color-background;
   }
 
   .timeline {
@@ -78,38 +78,38 @@ main {
     }
 
     &__time {
-      height: 200px;
       display: grid;
-      grid-auto-flow: row;
-      grid-row-gap: 16px;
-      grid-template-columns: 0.3fr 1.3fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr;
       grid-template-areas:
         "title title"
         "dot1 time-content"
         "dot2 time-content"
         "dot3 time-content";
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 0.3fr 1.3fr;
+      grid-auto-flow: row;
+      grid-row-gap: 16px;
+      height: 200px;
     }
 
     &__time-title {
-      grid-area: title;
-      background-color: $main-color;
-      color: #fff;
-      width: fit-content;
-      border-radius: 20px;
-      font-size: 30px;
       display: flex;
+      grid-area: title;
+      width: fit-content;
+      font-size: 30px;
+      color: #fff;
+      background-color: $main-color;
+      border-radius: 20px;
       span {
         padding: 0 10px;
       }
     }
 
     &__time-dot {
-      height: 25px;
+      display: inline-block;
       width: 25px;
+      height: 25px;
       background-color: $main-color;
       border-radius: 50%;
-      display: inline-block;
     }
 
     &__time-dot1 {
@@ -128,8 +128,8 @@ main {
       display: flex;
       flex-direction: column;
       grid-area: time-content;
-      font-size: 20px;
       gap: 10px;
+      font-size: 20px;
       span:first-child {
         font-weight: 600;
       }
@@ -151,28 +151,29 @@ main {
     &__content {
       display: flex;
       flex-direction: column;
+      gap: 20px;
       justify-content: space-evenly;
       width: 100%;
-      gap: 20px;
     }
 
     &__tools {
-      gap: 20px;
       display: flex;
       flex-direction: column;
+      gap: 20px;
     }
 
     &__tool-container {
       display: flex;
+      gap: 10px;
       align-items: center;
       justify-content: space-evenly;
-      gap: 10px;
+
       .fa-star {
         font-size: 30px;
         color: $main-color;
       }
       .fa-star:before {
-        font-family: "Font Awesome 6 Free";
+        font: var(--fa-style-family, "Font Awesome 6 Free");
       }
     }
 
@@ -182,22 +183,22 @@ main {
 
     &__slider {
       display: flex;
-      height: 35px;
-      align-items: center;
       gap: 20px;
+      align-items: center;
+      height: 35px;
     }
 
     &__slider-track {
+      position: relative;
       width: 250px;
       height: 100%;
-      position: relative;
     }
 
     &__slider-fill,
     &__slider-back {
+      position: absolute;
       height: 100%;
       border-radius: 15px;
-      position: absolute;
     }
 
     &__slider-back {
@@ -206,9 +207,9 @@ main {
     }
 
     &__slider-fill {
+      width: 0;
       background-color: $main-color;
       transition: 2s ease-in-out;
-      width: 0;
     }
 
     @media (min-width: map-get($breakpoints, "small")) {
@@ -244,20 +245,20 @@ main {
         grid-column: span 1;
       }
       &:nth-child(11n + 4) {
-        grid-column: span 2;
         grid-row: span 1;
+        grid-column: span 2;
       }
       &:nth-child(11n + 6) {
-        grid-column: span 3;
         grid-row: span 1;
+        grid-column: span 3;
       }
       &:nth-child(11n + 7) {
-        grid-column: span 1;
         grid-row: span 2;
+        grid-column: span 1;
       }
       &:nth-child(11n + 8) {
-        grid-column: span 2;
         grid-row: span 2;
+        grid-column: span 2;
       }
       &:nth-child(11n + 9) {
         grid-row: span 3;
@@ -282,8 +283,8 @@ main {
         gap: 20px;
         input,
         textarea {
-          font-size: 15px;
           width: 100%;
+          font-size: 15px;
         }
       }
     }
@@ -295,26 +296,26 @@ main {
     }
     &__name {
       display: flex;
-      justify-content: space-between;
       gap: 30px;
+      justify-content: space-between;
     }
     &__btn {
-      max-width: fit-content;
       align-self: center;
-      font-size: 20px;
-      background-color: #273020;
-      color: #fff;
+      max-width: fit-content;
       padding: 10px;
-      border-radius: 20px;
+      font-size: 20px;
+      color: #fff;
       cursor: pointer;
+      background-color: #273020;
+      border-radius: 20px;
 
       &:hover {
         background-color: #9dc183;
       }
 
       &:active {
-        background-color: #c0eca0;
         color: #273020;
+        background-color: #c0eca0;
       }
     }
   }
