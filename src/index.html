@@ -131,7 +131,6 @@
             </article>
             <article class="section section--even">
                 <div class="section__title" id="habilidades">
-                    <a href="#habilidades"></a>
                     <h1>HABILIDADES</h1>
                 </div>
                 <div class="skills__content">
@@ -205,12 +204,14 @@
             </article>
             <article class="section section--odd">
                 <div class="section__title" id="portfolio">
-                    <a href="#portfolio"></a>
                     <h1>PORTFOLIO</h1>
                 </div>
                 <div class="portfolio__content">
                     <div class="portfolio__gallery">
-                        <a class="portfolio__item" onclick="openImg(event)">
+                        <button
+                            class="portfolio__item"
+                            onclick="openImgModal(event)"
+                        >
                             <img
                                 class="portfolio__image"
                                 src="./assets/images/kelpie.jpg?as=webp&width=300.jpg"
@@ -220,11 +221,14 @@
                                     ./assets/images/kelpie.jpg?as=webp&width=800 800w
                                 "
                                 data-src="./assets/images/kelpie.jpg"
-                                alt="Dibujo de caballo"
+                                alt="Dibujo de caballo negro"
                                 sizes="(max-width: 600px) 250px, 300px"
                             />
-                        </a>
-                        <a class="portfolio__item" onclick="openImg(event)">
+                        </button>
+                        <button
+                            class="portfolio__item"
+                            onclick="openImgModal(event)"
+                        >
                             <img
                                 class="portfolio__image"
                                 src="./assets/images/lancelot.jpg?as=webp&width=300.jpg"
@@ -234,11 +238,14 @@
                                     ./assets/images/lancelot.jpg?as=webp&width=800 800w
                                 "
                                 data-src="./assets/images/lancelot.jpg"
-                                alt="Dibujo de caballo"
+                                alt="Dibujo de caballo oscuro"
                                 sizes="(max-width: 600px) 250px, 300px"
                             />
-                        </a>
-                        <a class="portfolio__item" onclick="openImg(event)">
+                        </button>
+                        <button
+                            class="portfolio__item"
+                            onclick="openImgModal(event)"
+                        >
                             <img
                                 class="portfolio__image"
                                 src="./assets/images/ryser.jpg?as=webp&width=300.jpg"
@@ -248,11 +255,14 @@
                                     ./assets/images/ryser.jpg?as=webp&width=800 800w
                                 "
                                 data-src="./assets/images/ryser.jpg"
-                                alt="Dibujo de caballo"
+                                alt="Dibujo de caballo marron"
                                 sizes="(max-width: 600px) 250px, 300px"
                             />
-                        </a>
-                        <a class="portfolio__item" onclick="openImg(event)">
+                        </button>
+                        <button
+                            class="portfolio__item"
+                            onclick="openImgModal(event)"
+                        >
                             <img
                                 class="portfolio__image"
                                 src="./assets/images/tigre.jpg?as=webp&width=300.jpg"
@@ -265,10 +275,10 @@
                                 alt="Dibujo de tigre"
                                 sizes="(max-width: 600px) 250px, 300px"
                             />
-                        </a>
+                        </button>
                     </div>
                     <div class="portfolio__modal">
-                        <a onclick="closeModal()">
+                        <a onclick="closeImgModal()">
                             <img class="portfolio__modal-img" />
                         </a>
                     </div>
@@ -276,7 +286,6 @@
             </article>
             <article class="section section--even">
                 <div class="section__title" id="contacto">
-                    <a href="#contacto"></a>
                     <h1>CONTACTO</h1>
                 </div>
                 <div class="contacto__content">
@@ -287,6 +296,7 @@
                     <div>
                         <form>
                             <div class="contacto__name">
+                                <label for="fname">Nombre</label>
                                 <input
                                     id="fname"
                                     name="fname"
@@ -297,6 +307,7 @@
                                     pattern="[a-zA-Z\-\']+"
                                     required
                                 />
+                                <label for="fsurname">Apellido</label>
                                 <input
                                     id="fsurname"
                                     name="fsurname"
@@ -309,7 +320,9 @@
                                 />
                             </div>
                             <div>
+                                <label for="textarea">Mensaje</label>
                                 <textarea
+                                    id="textarea"
                                     name="textarea"
                                     rows="10"
                                     cols="50"

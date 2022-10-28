@@ -1,38 +1,47 @@
-/**
- * Import dependencies from node_modules
- * see commented examples below
- */
-
-// import 'some-node-module';
-// import SomeModule from 'some-node-module';
+const slider_language = [100, 85];
+const nav_links = [
+  "sobre-mi",
+  "timeline",
+  "habilidades",
+  "portfolio",
+  "contacto",
+];
 
 /**
  * Write any other JavaScript below
  */
 
+//Scroll to navigation bar when click in element.
 function scrollToSidenav() {
   document.getElementById("nav-bar").scrollIntoView({ behavior: "smooth" });
 }
 
+//Close the sidenav
 function handleNavBar() {
   const element = document.getElementsByClassName("sidebarjs--is-visible")[0];
   element.classList.remove("sidebarjs--is-visible");
 }
 
-function openImg(event) {
+//Open image modal
+function openImgModal(event) {
   const src = event.target.srcset.split(",")[2].split(/\s/g)[1];
   document
     .getElementsByClassName("portfolio__modal-img")[0]
     .setAttribute("src", src);
+  document
+    .getElementsByClassName("portfolio__modal-img")[0]
+    .setAttribute("alt", event.target.alt);
   document.getElementsByClassName("portfolio__modal")[0].style.display = "flex";
 }
 
-function closeModal() {
+//Close image modal
+function closeImgModal() {
   document.getElementsByClassName("portfolio__modal")[0].style.display = "none";
 }
 
-const slider_viewport = (index, value) => {
-  const observer_slider = new IntersectionObserver(
+//Set slider values to its value from array (for the animation) when it enters in the viewport
+const sliderViewport = (index, value) => {
+  const observerSlider = new IntersectionObserver(
     function (entries) {
       if (entries[0].isIntersecting === true)
         document.getElementsByClassName("skills__slider-fill")[
@@ -42,10 +51,29 @@ const slider_viewport = (index, value) => {
     { threshold: [1] }
   );
 
-  observer_slider.observe(
+  observerSlider.observe(
     document.getElementsByClassName("skills__slider")[index]
   );
 };
 
-slider_viewport(0, 100);
-slider_viewport(1, 85);
+const setSliders = () =>
+  slider_language.forEach((el, index) => sliderViewport(index, el));
+
+setSliders();
+
+//Change url while scrolling to match anchor when it is in viewport
+const changeURLScroll = new IntersectionObserver(
+  function (entries) {
+    if (entries[0].isIntersecting === true) {
+      history.pushState("", "", `#${entries[0].target.children[0].id}`);
+    }
+  },
+  { threshold: [0.3] }
+);
+
+const setUrlNavLinks = () =>
+  nav_links.forEach((el) =>
+    changeURLScroll.observe(document.getElementById(el).parentElement)
+  );
+
+setUrlNavLinks();

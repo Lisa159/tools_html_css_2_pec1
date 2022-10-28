@@ -105,7 +105,7 @@ main {
       width: fit-content;
       font-size: rem(30);
       color: $font-contrast-color;
-      background-color: $main-color;
+      background-color: $main-medium-color;
       border-radius: 20px;
       span {
         padding: 0 10px;
@@ -274,8 +274,11 @@ main {
         grid-template-columns: repeat(6, 1fr);
       }
     }
+
     &__item {
       cursor: pointer;
+      background-color: transparent;
+      border: none;
 
       &:nth-child(11n + 1) {
         grid-column: span 1;
@@ -321,6 +324,13 @@ main {
         textarea {
           width: 100%;
           font-size: rem(15);
+        }
+        label {
+          position: absolute;
+          visibility: hidden;
+          border: 0;
+          padding: 0;
+          margin: 0;
         }
       }
     }
