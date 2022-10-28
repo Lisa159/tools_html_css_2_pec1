@@ -1,1 +1,1 @@
-const sidebarjs = new SidebarJS("sidebarjs");
+const sidebarjs = new SidebarJS.SidebarElement();

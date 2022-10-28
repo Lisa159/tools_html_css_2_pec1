@@ -40,6 +40,11 @@
   &--responsive {
     background-color: $main-dark-color;
 
+    &__container-hamburguer {
+      width: fit-content;
+      height: 100%;
+    }
+
     &__hamburguer {
       width: 70px;
       height: 100%;
