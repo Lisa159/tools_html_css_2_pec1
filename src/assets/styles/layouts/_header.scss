@@ -5,23 +5,6 @@ header {
 }
 
 .header {
-  height: 370px;
-
-  &__drawing {
-    background-color: $main-color;
-
-    img {
-      width: calc(100% - 15px);
-      height: 300px;
-      margin-bottom: 1.5%;
-      border-radius: 0 0 50%;
-    }
-  }
-
-  &__name-container {
-    display: none;
-  }
-
   &__photo {
     position: absolute;
     top: 200px;
@@ -57,93 +40,126 @@ header {
     }
   }
 
-  @media (min-width: map-get($breakpoints, "small")) {
-    &__drawing {
-      width: 100%;
-      height: 300px;
-      background-color: rgba(0, 0, 0, 0);
-      background-image: linear-gradient(
-          rgba(255, 255, 255, 0.45),
-          rgba(255, 255, 255, 0.4)
-        ),
-        url(../images/kelpie.jpg);
-      background-repeat: repeat, repeat;
-      background-attachment: scroll, scroll;
-      background-position: 0 0, 0 0;
-      background-clip: border-box, border-box;
-      background-origin: padding-box, padding-box;
-      background-size: cover;
-      border-radius: 0;
+  &--responsive {
+    .header {
+      &__drawing-container {
+        height: 370px;
+      }
 
-      picture {
-        display: none;
+      &__drawing {
+        background-color: $main-color;
+
+        img {
+          width: calc(100% - 15px);
+          height: 300px;
+          margin-bottom: 1.5%;
+          border-radius: 0 0 50%;
+        }
+      }
+
+      &__name-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      &__name {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+        span {
+          font-size: rem(40);
+        }
+        div {
+          width: 20px;
+          height: 25px;
+          background-color: $main-color;
+        }
+      }
+
+      &__profession {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 80px;
+        text-align: center;
+        background-color: $main-color;
+        span {
+          font-size: rem(25);
+          color: #fff;
+        }
       }
     }
 
-    &__name-container {
-      display: flex !important;
-      flex-direction: column;
-      gap: 20px;
-      align-items: center;
-      justify-content: flex-start;
-      height: 100%;
-      padding-top: 20px;
-    }
-
-    &__name {
-      font-family: $font-family-title;
-      font-size: 64px;
-      font-style: normal;
-      font-weight: 400;
-      color: #fff;
-      text-align: center;
-    }
-
-    &__profession {
-      font-size: 50px;
-      font-style: normal;
-      font-weight: 400;
-      color: #fff;
-      text-align: center;
-    }
-  }
-}
-
-.name-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-
-  &__name {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    text-align: center;
-    span {
-      font-size: 40px;
-    }
-    div {
-      width: 20px;
-      height: 25px;
-      background-color: $main-color;
+    @media (min-width: map-get($breakpoints, "small")) {
+      display: none;
     }
   }
 
-  &__profession {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 80px;
-    text-align: center;
-    background-color: $main-color;
-    span {
-      font-size: 25px;
-      color: #fff;
-    }
-  }
+  &--nonresponsive {
+    height: 370px;
 
-  @media (min-width: map-get($breakpoints, "small")) {
-    display: none;
+    .header {
+      &__drawing {
+        width: 100%;
+        height: 300px;
+        background-color: rgba(0, 0, 0, 0);
+        background-image: linear-gradient(
+            rgba(255, 255, 255, 0.45),
+            rgba(255, 255, 255, 0.4)
+          ),
+          url(../images/kelpie.jpg);
+        background-repeat: repeat, repeat;
+        background-attachment: scroll, scroll;
+        background-position: 0 0, 0 0;
+        background-clip: border-box, border-box;
+        background-origin: padding-box, padding-box;
+        background-size: cover;
+        border-radius: 0;
+
+        picture {
+          display: none;
+        }
+      }
+
+      &__separator {
+        width: 100%;
+        height: 10px;
+        background-color: $main-color;
+      }
+
+      &__name-container {
+        display: flex !important;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100%;
+        padding-top: 20px;
+      }
+
+      &__name {
+        font-family: $font-family-title;
+        font-size: rem(64);
+        font-style: normal;
+        font-weight: 400;
+        color: #fff;
+        text-align: center;
+      }
+
+      &__profession {
+        font-size: rem(50);
+        font-style: normal;
+        font-weight: 400;
+        color: #fff;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: map-get($breakpoints, "small")) {
+      display: none;
+    }
   }
 }

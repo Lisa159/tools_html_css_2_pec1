@@ -19,6 +19,18 @@ function handleNavBar() {
   element.classList.remove("sidebarjs--is-visible");
 }
 
+function openImg(event) {
+  const src = event.target.srcset.split(",")[2].split(/\s/g)[1];
+  document
+    .getElementsByClassName("portfolio__modal-img")[0]
+    .setAttribute("src", src);
+  document.getElementsByClassName("portfolio__modal")[0].style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementsByClassName("portfolio__modal")[0].style.display = "none";
+}
+
 const slider_viewport = (index, value) => {
   const observer_slider = new IntersectionObserver(
     function (entries) {

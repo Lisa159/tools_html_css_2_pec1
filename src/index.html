@@ -22,7 +22,7 @@
         <title>Curriculum</title>
     </head>
     <body>
-        <include src="./views/header.html"></include>
+        <include src="./views/header/header.html"></include>
         <main>
             <button
                 class="arrow"
@@ -36,7 +36,7 @@
                 <div class="section__title" id="sobre-mi">
                     <h1>SOBRE MI</h1>
                 </div>
-                <div class="section__content">
+                <div class="sobre-mi__content">
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore
@@ -123,7 +123,7 @@
                         </div>
                         <div class="timeline__time-content">
                             <span>Bellas artes</span>
-                            <span>Univerdiad de Salamanca</span>
+                            <span>Universidad de Salamanca</span>
                             <span><i>Salamanca, España</i></span>
                         </div>
                     </div>
@@ -210,54 +210,67 @@
                 </div>
                 <div class="portfolio__content">
                     <div class="portfolio__gallery">
-                        <div class="portfolio__item">
+                        <a class="portfolio__item" onclick="openImg(event)">
                             <img
                                 class="portfolio__image"
                                 src="./assets/images/kelpie.jpg?as=webp&width=300.jpg"
                                 srcset="
                                     ./assets/images/kelpie.jpg?as=webp&width=250 250w,
-                                    ./assets/images/kelpie.jpg?as=webp&width=300 300w
+                                    ./assets/images/kelpie.jpg?as=webp&width=300 300w,
+                                    ./assets/images/kelpie.jpg?as=webp&width=800 800w
                                 "
+                                data-src="./assets/images/kelpie.jpg"
                                 alt="Dibujo de caballo"
                                 sizes="(max-width: 600px) 250px, 300px"
                             />
-                        </div>
-                        <div class="portfolio__item">
+                        </a>
+                        <a class="portfolio__item" onclick="openImg(event)">
                             <img
                                 class="portfolio__image"
                                 src="./assets/images/lancelot.jpg?as=webp&width=300.jpg"
                                 srcset="
                                     ./assets/images/lancelot.jpg?as=webp&width=250 250w,
-                                    ./assets/images/lancelot.jpg?as=webp&width=300 300w
+                                    ./assets/images/lancelot.jpg?as=webp&width=300 300w,
+                                    ./assets/images/lancelot.jpg?as=webp&width=800 800w
                                 "
+                                data-src="./assets/images/lancelot.jpg"
                                 alt="Dibujo de caballo"
                                 sizes="(max-width: 600px) 250px, 300px"
                             />
-                        </div>
-                        <div class="portfolio__item">
+                        </a>
+                        <a class="portfolio__item" onclick="openImg(event)">
                             <img
                                 class="portfolio__image"
                                 src="./assets/images/ryser.jpg?as=webp&width=300.jpg"
                                 srcset="
                                     ./assets/images/ryser.jpg?as=webp&width=250 250w,
-                                    ./assets/images/ryser.jpg?as=webp&width=300 300w
+                                    ./assets/images/ryser.jpg?as=webp&width=300 300w,
+                                    ./assets/images/ryser.jpg?as=webp&width=800 800w
                                 "
+                                data-src="./assets/images/ryser.jpg"
                                 alt="Dibujo de caballo"
                                 sizes="(max-width: 600px) 250px, 300px"
                             />
-                        </div>
-                        <div class="portfolio__item">
+                        </a>
+                        <a class="portfolio__item" onclick="openImg(event)">
                             <img
                                 class="portfolio__image"
                                 src="./assets/images/tigre.jpg?as=webp&width=300.jpg"
                                 srcset="
                                     ./assets/images/tigre.jpg?as=webp&width=250 250w,
-                                    ./assets/images/tigre.jpg?as=webp&width=300 300w
+                                    ./assets/images/tigre.jpg?as=webp&width=300 300w,
+                                    ./assets/images/tigre.jpg?as=webp&width=800 800w
                                 "
+                                data-src="./assets/images/tigre.jpg?as=webp"
                                 alt="Dibujo de tigre"
                                 sizes="(max-width: 600px) 250px, 300px"
                             />
-                        </div>
+                        </a>
+                    </div>
+                    <div class="portfolio__modal">
+                        <a onclick="closeModal()">
+                            <img class="portfolio__modal-img" />
+                        </a>
                     </div>
                 </div>
             </article>

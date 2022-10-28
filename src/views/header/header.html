@@ -1,0 +1,50 @@
+<header>
+    <div class="header header--responsive">
+        <div class="header__drawing-container">
+            <div class="header__drawing">
+                <picture>
+                    <source
+                        media="(max-width: 480px)"
+                        srcset="./assets/images/kelpie_mobile.png?as=webp"
+                    />
+                    <source
+                        media="(min-width: 481px)"
+                        srcset="./assets/images/kelpie.jpg?as=webp"
+                    />
+                    <img
+                        data-src="./assets/images/kelpie.jpg?as=webp"
+                        src="./assets/images/kelpie.jpg?as=webp"
+                        type="image/webp"
+                        title="Dibujo de caballo"
+                        alt="Dibujo de caballo"
+                        loading="lazy"
+                        width="768"
+                        height="auto"
+                    />
+                </picture>
+            </div>
+            <include src="./views/header/photo_profile.html"></include>
+        </div>
+        <div class="header__name-container">
+            <div class="header__name">
+                <div></div>
+                <span>Elena Martín</span>
+                <div></div>
+            </div>
+            <div class="header__profession">
+                <span>Ilustradora freelance</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="header header--nonresponsive">
+        <div class="header__drawing">
+            <div class="header__name-container">
+                <span class="header__name">Elena Martín</span>
+                <span class="header__profession">Ilustradora freelance</span>
+            </div>
+        </div>
+        <div class="header__separator"></div>
+        <include src="./views/header/photo_profile.html"></include>
+    </div>
+</header>
