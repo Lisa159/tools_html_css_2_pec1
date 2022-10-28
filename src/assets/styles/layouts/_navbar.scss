@@ -89,10 +89,13 @@
     }
 
     &__link:first-child {
+      box-sizing: content-box;
       align-self: flex-end;
       height: 42px;
+      padding: 5px;
       font-size: rem(50);
       line-height: 36px;
+      cursor: pointer;
     }
 
     @media (min-width: map-get($breakpoints, "small")) {
