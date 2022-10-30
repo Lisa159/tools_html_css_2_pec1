@@ -9,6 +9,8 @@
             rel="stylesheet"
             type="text/css"
             href="./assets/styles/main.scss"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
         />
         <!-- do not remove this line! -->
         <link
@@ -210,6 +212,7 @@
                     <div class="portfolio__gallery">
                         <button
                             class="portfolio__item"
+                            aria-label="Abrir imagen"
                             onclick="openImgModal(event)"
                         >
                             <img
@@ -223,10 +226,12 @@
                                 data-src="./assets/images/kelpie.jpg"
                                 alt="Dibujo de caballo negro"
                                 sizes="(max-width: 600px) 250px, 300px"
+                                loading="lazy"
                             />
                         </button>
                         <button
                             class="portfolio__item"
+                            aria-label="Abrir imagen"
                             onclick="openImgModal(event)"
                         >
                             <img
@@ -240,10 +245,12 @@
                                 data-src="./assets/images/lancelot.jpg"
                                 alt="Dibujo de caballo oscuro"
                                 sizes="(max-width: 600px) 250px, 300px"
+                                loading="lazy"
                             />
                         </button>
                         <button
                             class="portfolio__item"
+                            aria-label="Abrir imagen"
                             onclick="openImgModal(event)"
                         >
                             <img
@@ -257,10 +264,12 @@
                                 data-src="./assets/images/ryser.jpg"
                                 alt="Dibujo de caballo marron"
                                 sizes="(max-width: 600px) 250px, 300px"
+                                loading="lazy"
                             />
                         </button>
                         <button
                             class="portfolio__item"
+                            aria-label="Abrir imagen"
                             onclick="openImgModal(event)"
                         >
                             <img
@@ -274,17 +283,19 @@
                                 data-src="./assets/images/tigre.jpg?as=webp"
                                 alt="Dibujo de tigre"
                                 sizes="(max-width: 600px) 250px, 300px"
+                                loading="lazy"
                             />
                         </button>
                     </div>
                     <div class="portfolio__modal">
-                        <a onclick="closeImgModal()">
+                        <div onclick="closeImgModal()">
                             <img
                                 class="portfolio__modal-img"
                                 src="./assets/images/image_not_available.png"
                                 alt="Dibujo"
+                                loading="lazy"
                             />
-                        </a>
+                        </div>
                     </div>
                 </div>
             </article>
