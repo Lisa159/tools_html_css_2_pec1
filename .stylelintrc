@@ -1,6 +1,18 @@
 {
-  "extends": ["stylelint-config-recommended-scss", "stylelint-config-recess-order"],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recommended-scss",
+    "stylelint-config-recess-order"
+  ],
   "rules": {
-    "selector-class-pattern": "^.[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}$"
+    "selector-class-pattern": "^.[a-z]([a-z0-9-]+)?(__([a-z0-9]+-?)+)?(--([a-z0-9]+-?)+){0,2}$",
+    "color-no-hex": true,
+    "import-notation": "string",
+    "at-rule-no-unknown": null,
+    "no-invalid-position-at-import-rule": null,
+    "declaration-colon-newline-after": null,
+    "indentation": null,
+    "alpha-value-notation": "number",
+    "number-leading-zero": "never"
   }
 }

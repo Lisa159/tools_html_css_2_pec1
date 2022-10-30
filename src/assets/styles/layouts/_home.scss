@@ -5,10 +5,8 @@
 @import "footer";
 
 *,
-*:after,
-*:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+*::after,
+*::before {
   box-sizing: border-box;
   font-family: $font-family-serif;
 }
@@ -89,13 +87,11 @@ main {
 
     &__time {
       display: grid;
-      grid-template-areas:
-        "title title"
-        "dot1 time-content"
-        "dot2 time-content"
-        "dot3 time-content";
-      grid-template-rows: 1fr 1fr 1fr 1fr;
-      grid-template-columns: 0.3fr 1.3fr;
+      grid-template:
+        "title title" 1fr
+        "dot1 time-content" 1fr
+        "dot2 time-content" 1fr
+        "dot3 time-content" 1fr / .3fr 1.3fr;
       grid-auto-flow: row;
       grid-row-gap: 16px;
       height: 200px;
@@ -109,6 +105,7 @@ main {
       color: $font-contrast-color;
       background-color: $main-medium-color;
       border-radius: 20px;
+
       span {
         padding: 0 10px;
       }
@@ -140,6 +137,7 @@ main {
       grid-area: time-content;
       gap: 10px;
       font-size: rem(20);
+
       span:first-child {
         font-weight: 600;
       }
@@ -167,8 +165,7 @@ main {
   .skills {
     &__content {
       display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
+      flex-flow: column wrap;
       gap: 20px;
       justify-content: space-evenly;
       width: 100%;
@@ -192,7 +189,8 @@ main {
         font-size: rem(30);
         color: $main-color;
       }
-      .fa-star:before {
+
+      .fa-star::before {
         font: var(--fa-style-family, "Font Awesome 6 Free");
       }
     }
@@ -255,8 +253,8 @@ main {
       height: 100%;
       overflow: auto;
       cursor: pointer;
-      background-color: rgb(0, 0, 0);
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: rgb(0 0 0);
+      background-color: rgba(0 0 0 / .4);
 
       div {
         display: flex;
@@ -298,22 +296,27 @@ main {
       &:nth-child(11n + 1) {
         grid-column: span 1;
       }
+
       &:nth-child(11n + 4) {
         grid-row: span 1;
         grid-column: span 2;
       }
+
       &:nth-child(11n + 6) {
         grid-row: span 1;
         grid-column: span 3;
       }
+
       &:nth-child(11n + 7) {
         grid-row: span 2;
         grid-column: span 1;
       }
+
       &:nth-child(11n + 8) {
         grid-row: span 2;
         grid-column: span 2;
       }
+
       &:nth-child(11n + 9) {
         grid-row: span 3;
       }

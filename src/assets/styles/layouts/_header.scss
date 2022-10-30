@@ -4,7 +4,7 @@ header {
   gap: 10px;
 }
 
-.header {
+.page-header {
   &__photo {
     position: absolute;
     top: 200px;
@@ -41,7 +41,7 @@ header {
   }
 
   &--responsive {
-    .header {
+    .page-header {
       &__drawing-container {
         height: 370px;
       }
@@ -68,9 +68,11 @@ header {
         align-items: center;
         justify-content: space-around;
         text-align: center;
+
         span {
           font-size: rem(40);
         }
+
         div {
           width: 20px;
           height: 25px;
@@ -86,6 +88,7 @@ header {
         height: 80px;
         text-align: center;
         background-color: $main-medium-color;
+
         span {
           font-size: rem(25);
           color: $font-contrast-color;
@@ -101,23 +104,18 @@ header {
   &--nonresponsive {
     height: 370px;
 
-    .header {
+    .page-header {
       &__drawing {
         width: 100%;
         height: 300px;
-        background-color: rgba(0, 0, 0, 0);
+        background-color: rgba(0 0 0 / 0);
         background-image: linear-gradient(
-            rgba(255, 255, 255, 0.45),
-            rgba(255, 255, 255, 0.4)
+            rgba(255 255 255 / .45),
+            rgba(255 255 255 / .4)
           ),
-          url(../images/kelpie.jpg?width=800);
-        background-repeat: repeat, repeat;
-        background-attachment: scroll, scroll;
+          url("../images/kelpie.jpg?width=800");
         background-position: center;
-        background-clip: border-box, border-box;
-        background-origin: padding-box, padding-box;
         background-size: cover;
-        border-radius: 0;
 
         picture {
           display: none;

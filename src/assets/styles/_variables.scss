@@ -1,5 +1,6 @@
 @use "sass:color";
-@import url(https://fonts.googleapis.com/css?family=Righteous);
+
+@import "https://fonts.googleapis.com/css?family=Righteous";
 
 $font-family-serif: "Georgia", "Times New Roman", serif;
 $font-family-title: "Righteous";
@@ -8,7 +9,7 @@ $breakpoints: (
   "small": 480px,
   "medium": 768px,
   "large": 1024px,
-) !default;
+);
 
 $main-color: rgb(157 193 131);
 $main-color-background: rgb(237 243 232);
