@@ -88,7 +88,7 @@ header {
         background-color: $main-medium-color;
         span {
           font-size: rem(25);
-          color: #fff;
+          color: $font-contrast-color;
         }
       }
     }
@@ -145,7 +145,7 @@ header {
         font-size: rem(64);
         font-style: normal;
         font-weight: 400;
-        color: #fff;
+        color: $font-contrast-color;
         text-align: center;
       }
 
@@ -153,7 +153,7 @@ header {
         font-size: rem(50);
         font-style: normal;
         font-weight: 400;
-        color: #fff;
+        color: $font-contrast-color;
         text-align: center;
       }
     }

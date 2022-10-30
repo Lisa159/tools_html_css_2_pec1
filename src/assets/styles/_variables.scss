@@ -10,10 +10,10 @@ $breakpoints: (
   "large": 1024px,
 ) !default;
 
-$main-color: #9dc183;
-$main-color-background: #edf3e8;
-$main-dark-color: #273020;
-$main-medium-color: #819c6b;
-$main-light-color: #c0eca0;
+$main-color: rgb(157 193 131);
+$main-color-background: rgb(237 243 232);
+$main-dark-color: rgb(39 48 32);
+$main-medium-color: rgb(129 156 107);
+$main-light-color: rgb(192 236 160);
 
-$font-contrast-color: #fff;
+$font-contrast-color: rgb(255 255 255);
