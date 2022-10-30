@@ -1,8 +1,8 @@
 @use "../utils" as *;
 
-@import "header";
-@import "navbar";
-@import "footer";
+@import url("header");
+@import url("navbar");
+@import url("footer");
 
 *,
 *::after,
@@ -365,6 +365,7 @@ main {
 
     &__name {
       display: flex;
+      flex-direction: column;
       gap: 30px;
       justify-content: space-between;
     }
@@ -386,6 +387,12 @@ main {
       &:active {
         color: $main-dark-color;
         background-color: $main-light-color;
+      }
+    }
+
+    @media (min-width: map-get($breakpoints, "small")) {
+      &__name {
+        flex-direction: row;
       }
     }
   }
