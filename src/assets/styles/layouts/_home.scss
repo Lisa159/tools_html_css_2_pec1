@@ -152,6 +152,11 @@ main {
       &__content--odd {
         padding-left: calc(50% - 25px);
       }
+      &__time-title {
+        span {
+          direction: ltr;
+        }
+      }
     }
   }
 
