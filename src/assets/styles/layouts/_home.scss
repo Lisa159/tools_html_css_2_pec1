@@ -53,6 +53,7 @@ main {
     gap: 10px;
     align-items: center;
     justify-content: center;
+    min-height: 350px;
     padding: 20px;
 
     &__title {
@@ -67,6 +68,15 @@ main {
     &--even {
       width: 100%;
       background-color: $main-color-background;
+    }
+
+    &--odd {
+      background-image:
+        url("../images/leaf1.png?as=webp&width=200"),
+        url("../images/leaf2.png?as=webp&width=200"),
+        url("../images/leaf3.png?as=webp&width=200");
+      background-repeat: no-repeat, no-repeat, no-repeat;
+      background-position: left bottom, left top, right center;
     }
   }
 
