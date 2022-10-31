@@ -1,4 +1,7 @@
+//Slider values
 const slider_language = [100, 85];
+
+//Link's ids for navegation
 const nav_links = [
   "sobre-mi",
   "timeline",
@@ -6,10 +9,6 @@ const nav_links = [
   "portfolio",
   "contacto",
 ];
-
-/**
- * Write any other JavaScript below
- */
 
 //Scroll to navigation bar when click in element.
 function scrollToSidenav() {
